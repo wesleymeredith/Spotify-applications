@@ -9,6 +9,10 @@ load_dotenv()
 client_id = os.getenv("CLIENT_ID") 
 client_secret = os.getenv("CLIENT_SECRET")
 
+
+# we need to use get_token() in any future headers everytime we want to request 
+# from spotify API
+
 def get_token():
 
 # so we need to concat id + secret and transform into base64 for authorization 
@@ -65,8 +69,9 @@ def get_current_user(token):
     print(json_result)
 
 
-
 #calls
 token = get_token()
 result = search_for_artist(token, "Novo Amor") #returns json object/python dict
+user = get_current_user(token)
 
+print(user)

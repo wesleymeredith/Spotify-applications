@@ -10,9 +10,9 @@ client_id = os.getenv("CLIENT_ID")
 client_secret = os.getenv("CLIENT_SECRET")
 
 
+
+
 # we need to use this in any future headers everytime we want to request from API
-
-
 def get_token():
 
 # so we need to concat id + secret and transform into base64 for authorization 
